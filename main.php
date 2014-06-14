@@ -2,40 +2,40 @@
   class htmlPage 
   {
   	
-  private topPage() {
+  private function topofPage() {
    echo "<html>";
   }
   
-  private headOpenTag() {
+  private function headOpenTag() {
   	echo "<head>";
   }
   
-  private headContents() {
+  private function headContents() {
   	echo "<meta ....>";
   }
   
-  private headCloseTag() {
+  private function headCloseTag() {
   	echo "</head>";
   }
   
-  private bodyOpenTag() { 
+  private function bodyOpenTag() { 
   	echo "<body>";
   }
   
-  private bodyContents() 
+  private function bodyContents() 
   {
   	echo "  ";
   }
 
-  private bodyCloseTag() {
-  	echo "</body>"
+  private function bodyCloseTag() {
+  	echo "</body>";
   }
   
-  private htmlCloseTag() {
+  private function htmlCloseTag() {
   	echo "</html>";
   }
   
-  public __construct() {
+  public function __construct() {
   	topPage();
   	headOpenTag();
   	headContents();
@@ -45,4 +45,5 @@
   	bodyCloseTag();
   	htmlCloseTag();
   }
+}
 ?>
