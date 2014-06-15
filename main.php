@@ -2,48 +2,48 @@
   class htmlPage 
   {
   	
-  private function topofPage() {
+  protected function topPage() {
    echo "<html>";
   }
   
-  private function headOpenTag() {
+  protected function headOpenTag() {
   	echo "<head>";
   }
   
-  private function headContents() {
+  protected function headContents() {
   	echo "<meta ....>";
   }
   
-  private function headCloseTag() {
+  protected function headCloseTag() {
   	echo "</head>";
   }
   
-  private function bodyOpenTag() { 
+  protected function bodyOpenTag() { 
   	echo "<body>";
   }
   
-  private function bodyContents() 
+  protected function bodyContents() 
   {
   	echo "  ";
   }
 
-  private function bodyCloseTag() {
+  protected function bodyCloseTag() {
   	echo "</body>";
   }
   
-  private function htmlCloseTag() {
+  protected function htmlCloseTag() {
   	echo "</html>";
   }
   
   public function __construct() {
-  	topPage();
-  	headOpenTag();
-  	headContents();
-  	headCloseTag();
-  	bodyOpenTag();
-  	bodyContents();
-  	bodyCloseTag();
-  	htmlCloseTag();
+  	$this->topPage();
+  	$this->headOpenTag();
+  	$this->headContents();
+  	$this->headCloseTag();
+  	$this->bodyOpenTag();
+  	$this->bodyContents();
+  	$this->bodyCloseTag();
+  	$this->htmlCloseTag();
   }
-}
+} 
 ?>
