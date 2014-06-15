@@ -28,6 +28,7 @@
   protected function headContents($tit) {
   	// sets the page title
   	$this->titlePage($tit);
+  	
   	// meta information: authors, keywords and description of the website, encoding
   	echo "<meta name=\"author\" contents=\"Konstantin Grigorov, Yordan Yordanov\">\n";
   	echo "<meta name=\"description\" contents=\"Website of MissyTravel agency\">\n";
@@ -37,17 +38,17 @@
   
   // Closes the <head> tag
   protected function headCloseTag() {
-  	echo "</head>";
+  	echo "</head>\n";
   }
   
   // Sets the title of the page
   private function titlePage($tit) {
-  	echo "<title> " + $tit + "</title>\n";
+  	echo "<title>" . $tit . "</title>\n";
   }
   
   // Opens the body tag --- this function is probably to be modified in the nearest future for more functionality
   protected function bodyOpenTag() { 
-  	echo "<body>";
+  	echo "<body>\n";
   }
   
   // The body part
@@ -58,12 +59,12 @@
   
   // closes the body
   protected function bodyCloseTag() {
-  	echo "</body>";
+  	echo "</body>\n";
   }
   
   // Closes the html tag
   protected function htmlCloseTag() {
-  	echo "</html>";
+  	echo "</html>\n";
   }
   
   // Class constructor -- invokes the former functions in the correct order to produce a 

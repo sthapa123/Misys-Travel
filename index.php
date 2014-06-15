@@ -8,7 +8,7 @@
   }
 	
   	protected function bodyContents() {
-  		echo "<B> This is the index page </B>";
+  		echo "<B> This is the index page </B>\n";
   	}
   }
   
