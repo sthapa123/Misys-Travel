@@ -1,9 +1,10 @@
 <?php
   include 'main.php';
+  
   class indexPage extends htmlPage
   {
-    public function __construct() {
-  	parent::__construct();
+    public function __construct($title) {
+  	parent::__construct($title);
   }
 	
   	protected function bodyContents() {
@@ -11,5 +12,5 @@
   	}
   }
   
-  $index_page = new indexPage();
+  $index_page = new indexPage("Index page");
 ?>
