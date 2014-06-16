@@ -8,6 +8,7 @@
   }
 	
   	protected function bodyContents() {
+  		parent::bodyContents(); 
   		echo "<B> This is the index page </B>\n";
   	}
   }
