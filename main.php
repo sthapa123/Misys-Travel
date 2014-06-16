@@ -16,6 +16,7 @@
   protected function topPage() {
     echo "<!DOCTYPE html>\n";
     echo "<html lang=\"bg\">\n";
+    echo '<link href="styles/menuMain.css" rel="stylesheet">';
   }
   
   // This just opens the head
@@ -56,6 +57,7 @@
   {
   	// Basic page division
   	echo "<div id=\"top_blue_gradient\"> </div> \n";
+  	include("menuMain.php");
   	echo "<div id=\"left_side_gradient\"> </div> \n";
   	echo "<div id=\"content_part\"> </div> \n";
   	echo "<div id=\"right_side_gradient\"> </div> \n";

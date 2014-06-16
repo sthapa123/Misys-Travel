@@ -8,8 +8,10 @@
   }
 	
   	protected function bodyContents() {
-  		echo "<B> This is the index page </B>\n";
+  		parent::bodyContents();
+  		//echo "<B> This is the index page </B>\n";
   	}
+  	
   }
   
   $index_page = new indexPage("Index page");

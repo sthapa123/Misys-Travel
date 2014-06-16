@@ -1,0 +1,17 @@
+#menuMain{
+	border-radius: 20px;
+	background-color: rgb(255,204,3);
+}
+
+#menuMain li{
+	display: inline;
+	padding: 15px;	
+}
+
+#menuMain a:link {
+    text-decoration: none;
+}
+
+#menuMain a:active{
+  background-color:rgb(255,237,163);
+}
