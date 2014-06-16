@@ -61,12 +61,34 @@
   	// Basic page division
   	echo "<div id=\"top_blue_gradient\"> </div> \n";
   	echo "<div id=\"under_top_gradient\"> \n";
-  	//horizontal menu 
-  	$menuTop = new menuMain();
   	echo "<div id=\"left_side_gradient\"> </div> \n";
-  	//echo "<div id=\"content_part\"> </div> \n";
+  	
+  	echo "<div id=\"content_part\"> \n";
+  	
+  	echo "<div id=\"header_image\"> <img src=\"../img/header.png\"> </div> \n";
+  	
+  	//horizontal menu
+  	echo "<div id=\"hor_Menu\">\n";
+  	$menuTop = new menuMain();
+  	echo "</div>\n"; 
+  	
+  	echo "<div id=\"left_menu_and_content\">\n";
+  	
+  	echo "<div id=\"left_menu\">\n";
+  	// call function
+  	echo "</div>\n";
+  	
+  	echo "<div id=\"content\"> \n";
+  	// function for content
+  	echo "</div>\n";
+  	
+  	echo "</div>\n"; // left_menu_and_content;
+  	
+  	echo "</div>\n"; // content_part
+  	
   	echo "<div id=\"right_side_gradient\">   </div> \n";
   	echo "</div>";
+  	echo "<div id=\"bottom_gradient\"> </div>";
   }
   
   // closes the body

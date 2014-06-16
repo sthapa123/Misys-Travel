@@ -16,7 +16,6 @@ body {
 
 #under_top_gradient 
 {
-	position: absolute;
 	top: 10px;
 	bottom: 0px;	
 	height: 90%; 
@@ -29,7 +28,7 @@ body {
 {
 	background: #043e88;
 	position: absolute;
-	top: 10px;
+	top: 40px;
 	bottom: 0px;
 	left: 0px;
 	width: 7%;
@@ -41,8 +40,8 @@ body {
 {
 	background: #043e88;
 	position: absolute;
-	top: 10px;
-	left: 15px;
+	top: 40px;
+	right: 0px;
 	width: 7%;
 	bottom: 0px;
 	margin: 0px; 
@@ -52,9 +51,63 @@ body {
 #content_part
 {
 	position: absolute;
-	top: 10px;
+	top: 40px;
 	bottom: 0px;
+	left: 7%;
 	width: 86%;
 }
 
+#header_image
+{
+	position: relative;
+	background: blue; /*url("../img/header.png");*/
+	width: 100%; 
+	height: 145px;
+}
 
+#header_image img {
+	height: 100%;
+	width: 100%;
+}
+
+#hor_menu 
+{
+	position: relative; 
+	width: 100%; 
+	height: 30px;
+}
+
+#left_menu_and_content
+{ 
+	position: absolute;
+	top: 175px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	background: #60abfc;
+}
+
+#left_menu 
+{
+	position: absolute;
+	top: 0px; 
+	width: 20%;
+	height: 100%;
+}
+
+#content 
+{
+	position: absolute; 
+	left: 20%; 
+	width: 80%; 
+	height: 100%;
+}
+
+#bottom_gradient 
+{
+	position: absolute;
+	background: #043e88; 
+	bottom: 0px; 
+	height: 30px; 
+	width: 100%;
+}

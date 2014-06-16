@@ -1,11 +1,12 @@
 #menuMain{
 	border-radius: 20px;
 	background-color: rgb(255,204,3);
+	margin: 0px; 
 }
 
 #menuMain li{
 	display: inline;
-	padding: 15px;	
+	padding: 10px;	
 }
 
 #menuMain a:link {
