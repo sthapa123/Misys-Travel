@@ -10,7 +10,7 @@
  * Last Modified: 	16 June 2014
  */
 
-  class htmlPage 
+  abstract class htmlPage 
   {
   // This function sets the document to be HTML 5 file ana opens the <html> tag
   protected function topPage() {
@@ -54,7 +54,11 @@
   // The body part
   protected function bodyContents() 
   {
-  	echo "  ";
+  	// Basic page division
+  	echo "<div id=\"top_blue_gradient\"> </div> \n";
+  	echo "<div id=\"left_side_gradient\"> </div> \n";
+  	echo "<div id=\"content_part\"> </div> \n";
+  	echo "<div id=\"right_side_gradient\"> </div> \n";
   }
   
   // closes the body
