@@ -1,10 +1,60 @@
 
+body {
+	padding: 0px;
+	margin: 0px;
+}
+
 #top_blue_gradient 
 {
-  background: -webkit-linear-gradient(180deg, red, blue); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(180deg, red, blue); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(180deg, red, blue); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(180deg, red, blue); /* Standard syntax */
-  position: fixed; 
-   
+  	background: #043e88; /* Standard syntax */
+  	position: relative; 
+  	height: 40px; 
+  	width: 100%;
+  	padding: 0px;
+	margin: 0px;
 }
+
+#under_top_gradient 
+{
+	position: absolute;
+	top: 10px;
+	bottom: 0px;	
+	height: 90%; 
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+#left_side_gradient
+{
+	background: #043e88;
+	position: absolute;
+	top: 10px;
+	bottom: 0px;
+	left: 0px;
+	width: 7%;
+	padding: 0px; 
+	margin: 0px;
+}
+
+#right_side_gradient
+{
+	background: #043e88;
+	position: absolute;
+	top: 10px;
+	left: 15px;
+	width: 7%;
+	bottom: 0px;
+	margin: 0px; 
+	padding: 0px; 
+}
+
+#content_part
+{
+	position: absolute;
+	top: 10px;
+	bottom: 0px;
+	width: 86%;
+}
+
+

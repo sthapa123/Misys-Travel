@@ -34,7 +34,9 @@
   	echo "<meta name=\"author\" contents=\"Konstantin Grigorov, Yordan Yordanov\">\n";
   	echo "<meta name=\"description\" contents=\"Website of MissyTravel agency\">\n";
   	echo "<meta name=\"keywords\" contents=\"holidays\">\n";
-  	echo "<meta charset=\"UTF-8\">"; 
+  	echo "<meta charset=\"UTF-8\">";
+  	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"styles/basic.css\">\n"; 
+  	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"styles/menu.css\">\n";
   }
   
   // Closes the <head> tag
@@ -58,9 +60,11 @@
   	// Basic page division
   	echo "<div id=\"top_blue_gradient\"> </div> \n";
   	include("menuMain.php");
+  	echo "<div id=\"under_top_gradient\"> \n";
   	echo "<div id=\"left_side_gradient\"> </div> \n";
-  	echo "<div id=\"content_part\"> </div> \n";
-  	echo "<div id=\"right_side_gradient\"> </div> \n";
+  	//echo "<div id=\"content_part\"> </div> \n";
+  	echo "<div id=\"right_side_gradient\">   </div> \n";
+  	echo "</div>";
   }
   
   // closes the body
