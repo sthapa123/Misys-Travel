@@ -1,9 +1,10 @@
+<?php 
 class menuMain {
   public function __construct(){
-		echo "<ul id= "menuMain">";
+		echo '<ul id= "menuMain">';
 		echo '<li><a href="index.php\">Home</a></li>';
 		echo '<li><a href="">Bus	Excursions</a></li>';
-		echo '<li><a href="">Airplane Excursions</a></li>'
+		echo '<li><a href="">Airplane Excursions</a></li>';
 		echo '<li><a href="">Holidays</a></li>';
 		echo '<li><a href="">New Year 2015</a></li>';
 		echo '<li><a href="">Individual Requests</a></li>';
@@ -14,3 +15,4 @@ class menuMain {
 		echo '</ul>';
 	}
 }
+?>

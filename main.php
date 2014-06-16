@@ -9,7 +9,8 @@
  * Authors:		 	Yordan Yordanov, Konstantin Grigorov 
  * Last Modified: 	16 June 2014
  */
-
+  
+  require 'menuMain.php';
   abstract class htmlPage 
   {
   // This function sets the document to be HTML 5 file ana opens the <html> tag
@@ -59,8 +60,9 @@
   {
   	// Basic page division
   	echo "<div id=\"top_blue_gradient\"> </div> \n";
-  	include("menuMain.php");
   	echo "<div id=\"under_top_gradient\"> \n";
+  	//horizontal menu 
+  	$menuTop = new menuMain();
   	echo "<div id=\"left_side_gradient\"> </div> \n";
   	//echo "<div id=\"content_part\"> </div> \n";
   	echo "<div id=\"right_side_gradient\">   </div> \n";
