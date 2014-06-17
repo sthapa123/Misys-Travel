@@ -1,0 +1,70 @@
+@CHARSET "UTF-8";
+
+.OBWrapper 
+{
+	padding: 10px;
+	width: 30%;
+	display: inline-block; /* Magic! */	
+}
+
+.OBBackground
+{
+	width: 100%;
+	height: 100%; 
+	background: #ffcc03;
+	border-radius: 10px;
+}
+
+.ODestName
+{
+    height: 25px; 
+	width: 100%;
+	padding-top: 3px;
+    padding-left: 15px;
+    font-size: 18px;
+}
+
+.OfferDuration 
+{
+	height: 15px;
+	width: 100%;
+	font-style: italic;
+    margin-left: 15px;
+    margin-bottom: 2px;
+}
+
+.ImageOffer
+{
+	width: 100%; 
+	height: 100px; 
+}
+
+.ImageOffer img 
+{
+	height: 100%; 
+	width: 100%; 
+}
+
+.PriceAndLink 
+{
+	height: 20px;
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.OfferPrice
+{
+	float: left;
+	margin-left: 10px;
+	margin-top: 2px;
+}
+
+.OfferLink 
+{
+	float: right;
+	background: #f64444;
+	padding: 3px;
+	border-radius: 8px;
+	margin-right: 10px;
+}
