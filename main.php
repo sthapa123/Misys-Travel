@@ -40,7 +40,8 @@
   	
   	// stylesheets
   	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"styles/basic.css\">\n"; 
-  	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"styles/menu.css\">\n";
+  	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"styles/menuMain.css\">\n";
+  	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"styles/orhboxes.css\">\n";
   }
   
   // Closes the <head> tag

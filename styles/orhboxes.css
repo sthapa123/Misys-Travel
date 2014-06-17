@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+
+.ORHBWrapper 
+{
+	width: 90%;
+	padding: 10px;
+}
+
+.orangeBox
+{
+  	width: 100%; 
+  	height: 100%;
+  	background: #ffcc03;
+  	border-radius: 10px; 
+}
+
+.orangeHead 
+{
+	width: 100%;
+	background: #f57643;
+	border-radius: 15px;
+}
+
+.options 
+{ 
+	padding: 3px;	
+}

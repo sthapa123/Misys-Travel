@@ -1,12 +1,13 @@
 <?php
   include 'main.php';
+  include 'elements/ORHBox.php';
   
   class indexPage extends htmlPage
   {
     
   	
   	public function insLeftMenu() {
-  		echo "index page";
+  		$box1 = new ORHBox();
   	}
   	
   	public function insContent() {
