@@ -1,18 +1,43 @@
+/*toDo: choose font, space between menu items*/
+
+
+#hor_Menu{
+	/*remove white corners from horizontal menu*/
+	background-color: rgb(96,171,252);
+}
+
 #menuMain{
 	border-radius: 20px;
 	background-color: rgb(255,204,3);
-	margin: 0px; 
+	padding-left: 0px;
+	padding-right: 0px; 
+	padding-top: 5px; 
+  padding-bottom: 5px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 #menuMain li{
 	display: inline;
-	padding: 10px;	
+	margin: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+  padding-left: 10px;
+  padding-right: 10px;	
 }
 
 #menuMain a:link {
+	  /*insert padding to achieve hovering change of color*/
+	  padding-top: 5px;
+	  padding-bottom: 5px;
     text-decoration: none;
 }
 
 #menuMain a:active{
   background-color:rgb(255,237,163);
+}
+
+#menuMain a:hover{
+	border-radius: 10px;
+  background-color: rgb(255,237,163); 	
 }
