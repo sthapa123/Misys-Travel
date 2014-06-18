@@ -64,9 +64,6 @@
   private function bodyContents() 
   {
   	// Basic page division ---------------------------------------------------------------
-  	echo "<div id=\"top_blue_gradient\"> </div> \n";
-  	echo "<div id=\"under_top_gradient\"> \n";
-  	echo "<div id=\"left_side_gradient\"> </div> \n";
   	
   	// this is the area inside the "blue borders"
   	echo "<div id=\"content_part\"> \n";
@@ -96,9 +93,7 @@
   	
   	echo "</div>\n"; // content_part
   	
-  	echo "<div id=\"right_side_gradient\">   </div> \n";
   	echo "</div>";
-  	echo "<div id=\"bottom_gradient\"> </div>";
   }
   
   // Putting contents in left menu area

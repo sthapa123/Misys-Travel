@@ -1,5 +1,11 @@
 @CHARSET "UTF-8";
 
+#offerBlocks
+{
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
 .OBWrapper 
 {
 	padding: 10px;
