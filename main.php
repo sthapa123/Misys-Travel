@@ -36,7 +36,10 @@
   	echo "<meta name=\"author\" contents=\"Konstantin Grigorov, Yordan Yordanov\">\n";
   	echo "<meta name=\"description\" contents=\"Website of MissyTravel agency\">\n";
   	echo "<meta name=\"keywords\" contents=\"holidays\">\n";
-  	echo "<meta charset=\"UTF-8\">";
+  	echo "<meta charset=\"UTF-8\">\n";
+  	
+  	// include JQuery from CDN
+  	echo '<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>'."\n"; 
   	
   	// stylesheets
   	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"styles/basic.css\">\n"; 
