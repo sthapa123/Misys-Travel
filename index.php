@@ -10,11 +10,10 @@
   	
   	public function insLeftMenu() {
   		$dbConn = new mysqlConn();
-  		$row = $dbConn->selectSubMenusQuery("BusExcursions");
-  		echo $row[0];
+  		$rows = $dbConn->selectSubMenusQuery("BusExcursions");
   		$dbConn->closeConnection();
-  		for ()
-  		$box1 = new ORHBox();
+  		for ($i = 0; $i < count($rows); $i++)
+  		   new ORHBox($rows[i], "option");
   	}
   	
   	public function insContent() {
