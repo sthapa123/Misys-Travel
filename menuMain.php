@@ -3,7 +3,7 @@ class menuMain {
   public function __construct(){
   	echo '<script type="text/javascript" src="./JavaScript/menuMain.js"></script>'."\n";
 		echo '<ul id= "menuMain">'."\n";
-		echo '<li><a href="http://localhost/Misys-travel">Начало</a></li>'."\n";
+		echo '<li><a href="http://kolygri.eu">Начало</a></li>'."\n";
 		echo '<li><a href="https://www.facebook.com/">Автобусни екскурзии</a></li>'."\n";
 		echo '<li><a href="https://www.facebook.com/">Самолетни екскурзии</a></li>'."\n";
 		echo '<li><a href="https://www.facebook.com/">Holidays</a></li>'."\n";
