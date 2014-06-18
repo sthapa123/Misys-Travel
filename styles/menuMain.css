@@ -1,4 +1,6 @@
-/*toDo: choose font, space between menu items*/
+/*toDo: choose font, space between menu items
+ *      set font in em
+ */
 
 
 #hor_Menu{
@@ -28,6 +30,7 @@
 
 #menuMain a:link {
 	/*insert padding to achieve hovering change of color*/
+	font-size: 1em;
 	padding-top: 5px;
 	padding-bottom: 5px;
   text-decoration: none;
