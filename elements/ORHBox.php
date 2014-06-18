@@ -9,7 +9,11 @@ class ORHBox
 		echo $title;
 		echo "</div>\n"; // orangeHead
 		echo "<div class=\"options\">";
-		echo $options;
+		
+		for ($curMenuItem = 0; $curMenuItem <= sizeof($options); $curMenuItem++){
+		 echo $options[$curMenuItem];
+		}
+		
 		echo "</div>\n"; // options
 		echo "</div>\n"; //orangeBox
 		echo "</div>\n"; // ORHBWrapper

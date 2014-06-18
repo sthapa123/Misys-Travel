@@ -1,6 +1,4 @@
-/*toDo: choose font, space between menu items
- *      set font in em
- */
+/*toDo: choose font, space between menu items*/
 
 
 #hor_Menu{
@@ -22,27 +20,24 @@
 #menuMain li{
 	display: inline;
 	margin: 0px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-  padding-left: 7px;
-  padding-right: 7px;	
+	padding-top: 0px;
+	padding-bottom: 0px;
+  padding-left: 10px;
+  padding-right: 10px;	
 }
 
 #menuMain a:link {
-	/*insert padding to achieve hovering change of color*/
-	font-size: 1em;
-	padding-top: 5px;
-	padding-bottom: 5px;
-  text-decoration: none;
+	  /*insert padding to achieve hovering change of color*/
+	  padding-top: 5px;
+	  padding-bottom: 5px;
+    text-decoration: none;
+}
+
+#menuMain a:active{
+  background-color:rgb(255,237,163);
 }
 
 #menuMain a:hover{
 	border-radius: 10px;
   background-color: rgb(255,237,163); 	
-}
-
-/*current page stays highlighted on the menu*/
-#menuMain .active{
-	border-radius: 10px;
-	background-color:rgb(255,237,163);
 }

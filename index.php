@@ -6,10 +6,9 @@
   //include 'elements/subMenu.php';
   
   class indexPage extends htmlPage
-  {
-    
-  	public function insLeftMenu() 
-  	{
+  {    	
+  	public function insLeftMenu() {
+  	
   		$dbConn = new mysqlConn();
   		$rows = $dbConn->selectLeftMenus("BusExcursions");
   		echo $rows[0]->getName();
