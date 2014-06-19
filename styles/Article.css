@@ -1,0 +1,73 @@
+@CHARSET "UTF-8";
+
+#fullOffer{
+	height: auto; 
+	min-height: 100%;
+	margin: 10px;
+	border-style: solid;
+  border-width: 2px;
+}
+
+#offer_title{
+	border-style: solid;
+  border-width: 2px;
+}
+
+#route{
+	border-style: solid;
+  border-width: 1px;
+}
+
+#shortOffer{
+	border-style: solid;
+  border-width: 1px;
+}
+
+#duration{
+	border-style: solid;
+  border-width: 1px;
+}
+
+#startingDates{
+	border-style: solid;
+  border-width: 1px;
+}
+
+#price{
+	border-style: solid;
+  border-width: 1px;
+}
+
+#requestButton{
+	border-style: solid;
+  border-width: 1px;
+}
+
+#image{
+	float:right;
+	width: 461px;
+	height: 301px;
+	margin: 10px;
+	border-style: solid;
+  border-width: 1px;
+}
+
+#gDescription{
+	border-style: solid;
+  border-width: 1px;
+}
+
+#dDescription{
+	border-style: solid;
+  border-width: 1px;
+}
+
+#hotels{
+	border-style: solid;
+  border-width: 1px;
+}
+
+#priceInfo{
+	border-style: solid;
+  border-width: 1px;
+}

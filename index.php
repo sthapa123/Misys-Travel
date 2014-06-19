@@ -13,7 +13,7 @@
   	{
   		echo "<div id=\"offerBlocks\">\n";
   		$offer1 = new OfferBox("Bulgaria", "17-07-14 - 17-08-14", "../img/hotel.jpg",
-  				               "100lv", "http://kolygri.eu/offer");
+  				               "100lv", "http://kolygri.eu/pages/ArticlePage.php");
   		$offer2 = new OfferBox("Bulgaria", "17-07-14 - 17-08-14", "../img/hotel.jpg",
   				"100lv", "http://kolygri.eu/offer");
   		$offer3 = new OfferBox("Bulgaria", "17-07-14 - 17-08-14", "../img/hotel.jpg",
@@ -23,7 +23,7 @@
   		$offer5 = new OfferBox("Bulgaria", "17-07-14 - 17-08-14", "../img/hotel.jpg",
   				"100lv", "http://kolygri.eu/offer");
   		$offer6 = new OfferBox("Bulgaria", "17-07-14 - 17-08-14", "../img/hotel.jpg",
-  				"100lv", "http://kolygri.eu/offer");
+  				"100lv", "http://kolygri.eu/");
   	/*	$offer7 = new OfferBox("Bulgaria", "17-07-14 - 17-08-14", "../img/hotel.jpg",
   				"100lv", "http://kolygri.eu/offer");
   		$offer8 = new OfferBox("Bulgaria", "17-07-14 - 17-08-14", "../img/hotel.jpg",

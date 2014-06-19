@@ -19,7 +19,6 @@
   private function topPage() {
     echo "<!DOCTYPE html>\n";
     echo "<html lang=\"bg\">\n";
-    echo '<link href="styles/menuMain.css" rel="stylesheet">';
   }
   
   // This just opens the head
@@ -43,10 +42,11 @@
   	echo '<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>'."\n"; 
   	
   	// stylesheets
-  	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"styles/basic.css\">\n"; 
-  	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"styles/menuMain.css\">\n";
-  	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"styles/orhboxes.css\">\n";
-  	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"styles/offerboxes.css\">\n";
+  	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"http://kolygri.eu/styles/basic.css\">\n"; 
+  	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"http://kolygri.eu/styles/menuMain.css\">\n";
+  	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"http://kolygri.eu/styles/orhboxes.css\">\n";
+  	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"http://kolygri.eu/styles/offerboxes.css\">\n";
+  	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"http://kolygri.eu/styles/Article.css\">\n";
   }
   
   // Closes the <head> tag
