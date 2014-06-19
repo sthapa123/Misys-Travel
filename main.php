@@ -7,10 +7,11 @@
  * 		This is to be inherited by all page classes.
  * 
  * Authors:		 	Yordan Yordanov, Konstantin Grigorov 
- * Last Modified: 	16 June 2014
+ * Last Modified: 	19 June 2014
  */
   
   require 'menuMain.php';
+  include 'utilities.php';
   
   abstract class htmlPage 
   {
@@ -122,15 +123,19 @@
   	echo "</html>\n";
   }
   
+  // protected utils object to provide util functions in all child classes
+  protected $utils;
+  
   // Class constructor -- invokes the former functions in the correct order to produce a 
   // basic and valid HTML 5 document
-  // argument &title - page title
+  // argument $title - page title
   public function __construct($title) {
   	$this->topPage();
   	$this->headOpenTag();
   	$this->headContents($title);
   	$this->headCloseTag();
   	$this->bodyOpenTag();
+  	$this->utils = new Utilities();
   	$this->bodyContents();
   	$this->bodyCloseTag();
   	$this->htmlCloseTag();

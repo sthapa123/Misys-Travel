@@ -1,23 +1,12 @@
 <?php
   include 'main.php';
-  include 'mysqlConn.php';
-  include 'elements/ORHBox.php';
-  include 'elements/OfferBox.php';
-  //include 'elements/subMenu.php';
   
   class indexPage extends htmlPage
-  {    	
-  	public function insLeftMenu() {
-  	
-  		$dbConn = new mysqlConn();
-  		$rows = $dbConn->selectLeftMenus("BusExcursions");
-  		echo $rows[0]->getName();
-  		$num_rows = count($rows);
-  		echo $num_rows;
-  		for ($i = 0; $i < $num_rows; $i++)
-  		{ 
-  			new ORHBox($rows[$i]->getName(), 'options');
-  		}
+  { 
+
+  	public function insLeftMenu() 
+  	{
+  		$this->utils->putLeftSideMenus("BusExcursions");
   	}
   	
   	public function insContent() 
