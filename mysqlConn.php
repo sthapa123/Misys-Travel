@@ -10,6 +10,7 @@
 
 include "elements/leftMenu.php"; // leftMenu structure
 include "elements/subMenus.php";
+include "elements/ArticleStruct.php";
 
 class mysqlConn
 {   
@@ -30,6 +31,34 @@ class mysqlConn
     
   }
   
+  private function selectFromWhereQuery($table, $s_fields, $w_field, $ref)
+  {
+  	// Set locale to UTF-8 .... magic!
+  	$this->conn->query("SET NAMES UTF8");
+  	
+  	$sel_fields = explode(",", $s_fields);
+  	$num_s_fields = count($sel_fields);
+  
+  	$query_as_string = "SELECT ";
+  	
+  	// add all select fields - without last one, because of the coma
+  	for ($i = 0; $i < ($num_s_fields - 1); $i++)
+  		$query_as_string = $query_as_string . $sel_fields[$i] . ", ";
+  	//now add last one 
+  	$query_as_string = $query_as_string . $sel_fields[$num_s_fields - 1];
+  	 
+  	// Query to select the submenus of given page and their links
+  	$query = ($query_as_string . " FROM " . $table . " WHERE ". $w_field . "='" . $ref . "'");
+  	
+  	$rs = $this->conn->query($query);
+  	
+  	// Check query and return
+  	if ($rs === false) 
+  		die('Wrong SQL: ' . $query . ' Error: ' . $this->conn->error);
+  	 else 
+  		return $rs;
+  }
+  
   /* 
    * This function retrieves which left side menus of a given page (as argument)
    * 
@@ -37,21 +66,7 @@ class mysqlConn
    **/
   public function selectLeftMenus($pageRef) 
   {
-  	// Set locale to UTF-8 .... magic! 
-  	$this->conn->query("SET NAMES UTF8");
-  	
-  	// Query to select the submenus of given page and their links 
-  	$query = ("SELECT id, subMenu, link FROM menus WHERE pageRef='" .$pageRef . "'");
-    
-  	$rs = $this->conn->query($query);
-    
-  	// Check query and calculate rows
-  	$rows_returned = 0; 
-  	if($rs === false) {
-  		die('Wrong SQL: ' . $query . ' Error: ' . $this->conn->error);
-  	} else {
-  		$rows_returned = $rs->num_rows;
-  	}
+  	$rs = $this->selectFromWhereQuery("menus", "id,subMenu,link", "pageRef", $pageRef);
   	
   	// array for the left side menus found
   	$menusFound = array(); 
@@ -80,25 +95,7 @@ class mysqlConn
    */
   public function selectSubMenus($pageRefId)
   {
-  	// Set locale to UTF-8 .... magic!
-  	$this->conn->query("SET NAMES UTF8");
-  	 
-  	// Query to select the submenus' id, label, parent and link
-  	// of given menu and their links
-  	$query = ("SELECT id, label, parent, link
-  			   FROM subMenus WHERE pageRefId='" .$pageRefId . "'");
-  	
-  	$rs = $this->conn->query($query);
-  	
-  	// Check query and calculate rows
-  	$rows_returned = 0;
-  	
-  	if($rs === false)
-  		die('Wrong SQL: ' . $query . ' Error: ' . $this->conn->error);
-  	
-  	else 
-  		$rows_returned = $rs->num_rows;
-  	 
+  	$rs = $this->selectFromWhereQuery("subMenus", "id,label,parent,link", "pageRefId", $pageRefId);
   	// Array for the submenus found
   	$menusFound = array();
   	 
