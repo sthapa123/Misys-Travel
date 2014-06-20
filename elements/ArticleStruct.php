@@ -14,19 +14,18 @@ class ArticleStruct
 	private $route;
 	private $gen_description;
 	private $day_description; 
-	private $parent_subM_Ref;
+	private $offerBox_Ref;
 	private $page_Ref_Id; 
 	
 	public function __construct($req_id, $req_offer_title, $req_route, $req_gen, $req_day,
-			                    $req_parent, $req_page)
+			                    $req_box)
 	{ 
 		$this->id = $req_id;
 		$this->offer_title = $req_offer_title;
 		$this->route = $req_route;
 		$this->gen_description = $req_gen;
 		$this->day_description = $req_day;
-		$this->parent_subM_Ref = $req_parent;
-		$this->page_Ref_Id = $req_page;
+		$this->offerBox_Ref = $req_box;
 	}
 	
 	public function getId()
@@ -54,9 +53,9 @@ class ArticleStruct
 		return $this->day_description();
 	}
 	
-	public function getParentRef()
+	public function getOfferBox_Ref()
 	{
-		return $this->parent_subM_Ref;
+		return $this->offerBox_Ref;
 	}
 	
 	public function getPageRefId()
