@@ -1,6 +1,5 @@
 <?php
 	include '../main.php';
-	include '../elements/Article.php';
 	
 	class ArticlePage extends htmlPage
 	{
@@ -12,7 +11,7 @@
 		/*insert new article in the page*/
 		public function insContent()
 		{
-			$article = new Article();
+			$this->utils->putPublication(1);
 		}
 	
 	}

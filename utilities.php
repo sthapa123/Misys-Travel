@@ -62,5 +62,13 @@ class Utilities
     		new OfferBox($offers[$i]->getTitle(), "n/a yet", $offers[$i]->getImage(),
     				     $offers[$i]->getPrice(), "http://kolygri.eu/pages/ArticlePage.php");
     }
+    
+    public function putPublication($offerBox_Ref)
+    {
+    	$pub = $this->dbConn->selectArticle($offerBox_Ref);
+    	
+    	new Article($pub->getOfferTitle(), $pub->getRoute(), $pub->getPrice(), $pub->getImage(),
+    				$pub->getGenDescription(), $pub->getDayToDayDescription());
+    }
 }
 ?>

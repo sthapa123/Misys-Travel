@@ -12,17 +12,21 @@ class ArticleStruct
 	private $id; 
 	private $offer_title;
 	private $route;
+	private $image;
+	private $price;
 	private $gen_description;
 	private $day_description; 
 	private $offerBox_Ref;
 	private $page_Ref_Id; 
 	
-	public function __construct($req_id, $req_offer_title, $req_route, $req_gen, $req_day,
-			                    $req_box)
+	public function __construct($req_id, $req_offer_title, $req_route, $req_price,
+			                    $req_image, $req_gen, $req_day, $req_box)
 	{ 
 		$this->id = $req_id;
 		$this->offer_title = $req_offer_title;
 		$this->route = $req_route;
+		$this->price = $req_price;
+		$this->image = $req_image; 
 		$this->gen_description = $req_gen;
 		$this->day_description = $req_day;
 		$this->offerBox_Ref = $req_box;
@@ -43,6 +47,16 @@ class ArticleStruct
 		return $this->route;
 	}
 	
+	public function getPrice()
+	{
+		return $this->price;
+	}
+	
+	public function getImage()
+	{
+		return $this->image;
+	}
+	
 	public function getGenDescription()
 	{
 		return $this->gen_description;
@@ -50,7 +64,7 @@ class ArticleStruct
 	
 	public function getDayToDayDescription()
 	{
-		return $this->day_description();
+		return $this->day_description;
 	}
 	
 	public function getOfferBox_Ref()

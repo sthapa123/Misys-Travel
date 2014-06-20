@@ -6,16 +6,16 @@
 
 	class Article
 	{
-		public function __construct()
+		public function __construct($offer_title, $route, $price, $image, $req_gen, $req_day)
 		{
 			/*total size of the article*/
 			echo '<div id="fullOffer">'."\n";				
 				echo '<div id="offer_title">'."\n";
-				echo '<h3>НЕПАЛ И КЛАСИЧЕКА ИНДИЯ С КРАЛСКИ РАДЖАСТАН</h3>'."\n";
+				echo $offer_title ."\n";
 				echo '</div>'."\n";
 			  
 				echo '<div id="route">'."\n";
-				echo '<p>Катманду - Агра - Джайпур – Джодпур – Удайпур - Делхи</p>'."\n";
+				echo $route . "\n";
 			  echo '</div>'."\n";
 			  
 			  /*items next to image*/
@@ -35,7 +35,7 @@
 				  echo '</div>'."\n";
 				  
 				  echo '<div id="price">'."\n";
-				  echo 'Цена: 855 eur'."\n";
+				  echo $price . "\n";
 				  echo '</div>'."\n";
 				  
 				  /*leads to request form about the particular excursion*/
@@ -46,24 +46,18 @@
 			  echo '</div>'."\n";
 			  
 			  echo '<div id="image">'."\n";
-			  echo '<img src="../img/IndiaNewDelhi.jpg" alt="IndiaNewDelhi" height=100% width=100%>'."\n";
+			  echo '<img src="'. $image . '" alt="IndiaNewDelhi" height=100% width=100%>'."\n";
 			  echo '</div>'."\n";
 
 			  echo '<div id="restOfOffer">'."\n";
 			    /*general description*/
 				  echo '<div id="gDescription">'."\n";
-				  echo '<p>Делхи (на хинди: दिल्ली; на урду: دهلى; на английски: Delhi) е метрополис в Северна Индия, разположен в обособената административна единица под федерално управление Национална столична територия Делхи.'.
-               'В административно отношение Делхи се разделя на няколко селища, сред които е Ню Делхи - официалната столица на Индия, където се намират всички институции на централното управление на страната.</p>'."\n";
+				  echo $req_gen ."<br>\n";
 				  echo '</div>';
 				  
 				  /*day by day description*/
 				  echo '<div id="dDescription">'."\n";
-				  echo '<p> Ден 01: Истанбул - Делхи<br>'.
-				       'Полет за Делхи в 00.35 ч от Истанбул</p>'."\n";
-				  echo '<p>Ден 02: Делхи<br>'.  
-               'Пристигане в Дубай в 06.30 ч Полет за Делхи в 07.40 чПристигане в Делхи 12.30 ч Посрещане от фирмата партньор със свежи гирлянди от цветя и трансфер до хотела.Следобед посещение на мястото където е кремиран Махатма Ганди .Вечеря. Нощувка в хотела. </p>'."\n";
-				  echo 'Ден 03: Делхи - City Tour<br>'.
-				  		 'След закуска обиколка на града Делхи, столица на Индия и главен вход към страната.Разглеждане на Новия и Стария Делхи ,Jama Masjid- най-голямата джамия в Индия, построена от Шах Джахан.Президентския дворец, Chandni Chowk, Вратата на Индия , Парламента, Qutab Minar.Посещение Червения форт построен от Шах Джахан Вечеря.Нощувка.'."\n";
+				  echo $req_day . "<br>\n";
 				  echo "</div>";
 				  
 				  /*accomodation hotels*/

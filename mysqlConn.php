@@ -164,20 +164,21 @@ class mysqlConn
   public function selectArticle($offerBox_Ref)
   {
   	$rs = $this->selectFromWhereQuery("ex_articles", 
-  			                "id,offer_title,route,gen_description,day_by_day_description",
+  			                "id,offer_title,image,route,price,gen_description,day_by_day_description",
   			  	            "offerBox_Ref", $offerBox_Ref);
   	
   	$rs->data_seek(0);
   	
   	$row = $rs->fetch_assoc();
   	
-    $articleFound = new ArticleStruct($row['id'], $row["offer_title"], $row['route'],
+    $articleFound = new ArticleStruct($row['id'], $row["offer_title"], $row['route'], $row['price'], $row['image'],
     		                          $row['gen_description'], $row['day_by_day_description'],
     		                          $offerBox_Ref);
 
     return $articleFound;
   	
   }
+  
   // Closes connection to database
   public function closeConnection()
   {
