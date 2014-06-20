@@ -67,6 +67,7 @@ class Utilities
     {
     	$pub = $this->dbConn->selectArticle($offerBox_Ref);
     	
+    	
     	new Article($pub->getOfferTitle(), $pub->getRoute(), $pub->getPrice(), $pub->getImage(),
     				$pub->getGenDescription(), $pub->getDayToDayDescription());
     }

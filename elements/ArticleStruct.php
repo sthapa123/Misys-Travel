@@ -54,17 +54,17 @@ class ArticleStruct
 	
 	public function getImage()
 	{
-		return $this->image;
+		return "./articles/" . $this->id . "/" . $this->image;
 	}
 	
 	public function getGenDescription()
 	{
-		return $this->gen_description;
+		return "./articles/" . $this->id . "/" . $this->gen_description;
 	}
 	
 	public function getDayToDayDescription()
 	{
-		return $this->day_description;
+		return "./articles/" . $this->id . "/" . $this->day_description;
 	}
 	
 	public function getOfferBox_Ref()

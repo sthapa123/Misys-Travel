@@ -52,12 +52,14 @@
 			  echo '<div id="restOfOffer">'."\n";
 			    /*general description*/
 				  echo '<div id="gDescription">'."\n";
-				  echo $req_gen ."<br>\n";
+				  $this->readFile($req_gen);
+				  echo "<br>\n";
 				  echo '</div>';
 				  
 				  /*day by day description*/
 				  echo '<div id="dDescription">'."\n";
-				  echo $req_day . "<br>\n";
+				  $this->readFile($req_day);
+				  echo "<br>\n";
 				  echo "</div>";
 				  
 				  /*accomodation hotels*/
@@ -84,5 +86,14 @@
 			/*closing tag for fullOffer*/
 		  echo '</div>'."\n";
 		}	
+		
+		private function readFile($path)
+		{
+			if (file_exists($path))
+				readfile($path);
+			else
+				echo "readFile(): Could not find " . $path . "\n <br>";
+		}
+		
 	}
 ?>
