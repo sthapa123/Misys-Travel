@@ -11,6 +11,7 @@
 include "elements/leftMenu.php"; // leftMenu structure
 include "elements/subMenus.php";
 include "elements/ArticleStruct.php";
+include "elements/OfferBoxStruct.php";
 
 class mysqlConn
 {   
@@ -116,7 +117,67 @@ class mysqlConn
   	return $menusFound;
   	
   }
+  /*
+   * This function gets all offer boxes' info from database with given submenu id. 
+   * 
+   * Returns array of OfferBoxStructs
+   */
+  public function selectOfferBoxes($subM_Id)
+  {
+  	// query for available boxes for this menu
+  	$rs = $this->selectFromWhereQuery("offer_boxes", "id,image_link", "subM_Id", $subM_Id);
+  	
+  	// sets starting search position for fetched rows
+  	$rs->data_seek(0);
+  	
+  	// will contain result of OfferBox structs
+  	$offersFound = array();
+  	
+  	// counter for array current position in array
+  	$counter = 0;
+  	
+  	// fetch all rows and assign them to the array
+  	while ($row = $rs->fetch_assoc())
+  	{
+  		$offersFound[$counter] = new OfferBoxStruct($row['id'], $row['image_link'], $subM_Id);
+  		$counter++;
+  	}
+  	
+  	// once the box are fetched, get offer title and price from ex_article table
+  	for ($i = 0; $i < $counter; $i++)
+  	{
+  		$rs2 = $this->selectFromWhereQuery("ex_articles", "offer_title,price",
+  			                               "offerBox_Ref", $offersFound[$i]->getId());
+  		$rs2->data_seek(0);
+
+  		$row2 = $rs2->fetch_assoc();
+  		
+  		$offersFound[$i]->setTitle($row2['offer_title']);
+  		$offersFound[$i]->setPrice($row2['price']);
+  	}  	
+  	
+  	return $offersFound;
+  }
+   
+  	
   
+  public function selectArticle($offerBox_Ref)
+  {
+  	$rs = $this->selectFromWhereQuery("ex_articles", 
+  			                "id,offer_title,route,gen_description,day_by_day_description",
+  			  	            "offerBox_Ref", $offerBox_Ref);
+  	
+  	$rs->data_seek(0);
+  	
+  	$row = $rs->fetch_assoc();
+  	
+    $articleFound = new ArticleStruct($row['id'], $row["offer_title"], $row['route'],
+    		                          $row['gen_description'], $row['day_by_day_description'],
+    		                          $offerBox_Ref);
+
+    return $articleFound;
+  	
+  }
   // Closes connection to database
   public function closeConnection()
   {

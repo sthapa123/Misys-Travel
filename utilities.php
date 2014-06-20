@@ -11,7 +11,7 @@
 include 'mysqlConn.php';
 include 'elements/ORHBox.php';
 include 'elements/OfferBox.php';
-
+include 'elements/Article.php';
 
 class Utilities
 {
@@ -44,6 +44,23 @@ class Utilities
     	 * leftMenu and submenus respectively
     	 */
 
-    }	
+    }
+    /*
+     * This function gets all OfferBoxStructs available for given submenu id(as argument)
+     * and puts it in OfferBoxes, printing them out
+     */
+    public function putOffers($subM_Id)
+    {
+    	// get all OfferBox structs
+    	$offers = $this->dbConn->selectOfferBoxes($subM_Id);
+    	
+    	// count them
+    	$num_offers = count($offers);
+    	
+    	// put each one of them in OfferBox
+    	for ($i = 0; $i < $num_offers; $i++)
+    		new OfferBox($offers[$i]->getTitle(), "n/a yet", $offers[$i]->getImage(),
+    				     $offers[$i]->getPrice(), "http://kolygri.eu/pages/ArticlePage.php");
+    }
 }
 ?>
