@@ -1,7 +1,5 @@
 <?php
-	include '../main.php';
-	include '../elements/Article.php';
-	
+	include '../main.php';	
 	class ArticlePage extends htmlPage
 	{
 		

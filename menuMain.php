@@ -1,7 +1,6 @@
 <?php 
 class menuMain {
   public function __construct(){
-  	echo '<script type="text/javascript" src="./JavaScript/menuMain.js"></script>'."\n";
 		echo '<ul id= "menuMain">'."\n";
 		echo '<li><a href="http://kolygri.eu">Начало</a></li>'."\n";
 		echo '<li><a href="https://www.facebook.com/">Автобусни екскурзии</a></li>'."\n";

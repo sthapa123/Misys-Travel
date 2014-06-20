@@ -39,7 +39,10 @@
   	echo "<meta charset=\"UTF-8\">\n";
   	
   	// include JQuery from CDN
-  	echo '<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>'."\n"; 
+  	echo '<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>'."\n";
+  	//javascript sources
+  	echo '<script src="../JavaScript/menuMain.js"></script>'."\n"; 
+  	echo '<script src="../JavaScript/ContentHeight.js"></script>'."\n";
   	
   	// stylesheets
   	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"http://kolygri.eu/styles/basic.css\">\n"; 
