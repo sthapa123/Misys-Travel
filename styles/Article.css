@@ -1,6 +1,7 @@
 @CHARSET "UTF-8";
 
 #fullOffer{
+	float: left;
 	height: auto; 
 	min-height: 100%;
 	margin: 10px;
@@ -9,36 +10,57 @@
 }
 
 #offer_title{
+	float: left;
+	width: 100%;
+	height: 40px;
+	font-size: 16px;
+	font-weight: bold;
 	border-style: solid;
   border-width: 2px;
 }
 
 #route{
+	float: left;
+	width: 100%;
+	height: 18px;
 	border-style: solid;
   border-width: 1px;
 }
 
 #shortOffer{
+	float: left;
+	width: 240px;
+	height: 355px;
 	border-style: solid;
   border-width: 1px;
 }
 
 #duration{
+	float: left;
+	width: 100%;
+	height: 18px;
 	border-style: solid;
   border-width: 1px;
 }
 
 #startingDates{
+	float: left;
 	border-style: solid;
   border-width: 1px;
 }
 
 #price{
+	float: left;
+	width: 100%;
+	height: 18px;
 	border-style: solid;
   border-width: 1px;
 }
 
 #requestButton{
+	float: left;
+	width: 100%;
+	height: 25px;
 	border-style: solid;
   border-width: 1px;
 }
@@ -52,6 +74,15 @@
   border-width: 1px;
 }
 
+#restOfOffer{
+	float: left;
+	width: 90%;
+	height: 400px;
+	margin: 5px;
+	border-style: solid;
+  border-width: 1px;
+}
+}
 #gDescription{
 	border-style: solid;
   border-width: 1px;

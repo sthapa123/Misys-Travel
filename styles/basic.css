@@ -12,9 +12,9 @@ body > #content_part { height: auto; min-height: 100%; }
 {
 	position: absolute;
 	top: 40px;
-	
+	max-width: 1150px;
 	bottom: 0px;
-	left: 7%;
+	left: 20%;
 	width: 86%;
 }
 
