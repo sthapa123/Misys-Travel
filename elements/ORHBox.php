@@ -57,10 +57,12 @@ class ORHBox
 	        // print each submenu item as li 
 	        // to be implemented: css classes for different levels, 
 	        // javascript for hiding/showing, etc
-	        for ($i=0; $i < $num_items; $i++)
-	   	       echo "<li> " . $this->options[$i]->getLabel() . " " 
-	                . $this->options[$i]->getParent() . "</li>\n";
-	   
+	        // get id and parents menu, so would be able to know which menu to hide
+	        for ($i=0; $i < $num_items; $i++){
+	   	       echo "<li class=".$this->options[$i]->getId().".".$this->options[$i]->getParent().">" 
+	   	       		. $this->options[$i]->getLabel() . " " 
+	              . $this->options[$i]->getParent() . "</li>\n";
+	        }
 	        echo "</ul>";
 	    }
 	}
