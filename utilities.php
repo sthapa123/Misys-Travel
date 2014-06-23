@@ -60,22 +60,35 @@ class Utilities
     	// put each one of them in OfferBox
     	for ($i = 0; $i < $num_offers; $i++)
     	{
+    		// Get all starting dates for current offer
     		$dates = $this->dbConn->selectStartingDates($offers[$i]->getId());
     		
+    		// Get first and last and make a string for the period
     		$period = "от " . $dates[0] . " до " . $dates[count($dates)-1];
     		
-    		new OfferBox($offers[$i]->getTitle(), $period, $offers[$i]->getImage(),
-    				     $offers[$i]->getPrice(), "http://kolygri.eu/pages/ArticlePage.php");
+    		new OfferBox($offers[$i]->getTitle(),
+    				     $period,
+    				     $offers[$i]->getImage(),
+    				     $offers[$i]->getPrice(), 
+    				     "http://kolygri.eu/pages/ArticlePage.php");
     	}
     }
     
-    public function putPublication($offerBox_Ref)
+    public function putPublication($offer_id)
     {
-    	$pub = $this->dbConn->selectArticle($offerBox_Ref);
+    	$pub = $this->dbConn->selectArticle($offer_id);
     	
+    	$dates = $this->dbConn->selectStartingDates($pub->getId());
     	
-    	new Article($pub->getOfferTitle(), $pub->getRoute(), $pub->getPrice(), $pub->getImage(),
-    				$pub->getGenDescription(), $pub->getDayToDayDescription());
+    	new Article($pub->getOfferTitle(),
+    			    $pub->getRoute(),
+    			    $pub->getDuration(),
+    			    $dates,
+    			    $pub->getPrice(),
+    			    $pub->getImage(),
+    				$pub->getGenDescription(),
+    			    $pub->getDayToDayDescription(),
+    			    $pub->getPriceInfo());
     }
 }
 ?>
