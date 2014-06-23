@@ -1,7 +1,7 @@
 <?php 
-
-class menuMain
- {
+class menuMain 
+{
+	
   public function __construct($menus)
   {
 		echo '<ul id= "menuMain">'."\n";
@@ -11,20 +11,21 @@ class menuMain
 		     '</a></li>'."\n";
 		
 		echo '<li><a href="./pages/Offers.php?id=' . 
-		     $menus[1]->getId() . '">' . $menus[1]->getName() . 
+		     $menus[1]->getId() . '">' . $menus[1] . 
 		     '</a></li>'."\n";
 		
-		echo '<li><a href="./pages/Offers.php?id=' . 
-		     $menus[2]->getId() . '">' .$menus[2]->getName() .
+		echo '<li><a href="./pages/Offers.php?id=3">' .
+		     $menus[2] .
 		     '</a></li>'."\n";
 		
-  		echo '<li><a href="https://www.facebook.com/">Нова Година</a></li>'."\n";
+		echo '<li><a href="https://www.facebook.com/">Holidays</a></li>'."\n";
+		echo '<li><a href="https://www.facebook.com/">Нова Година</a></li>'."\n";
 		echo '<li><a href="https://www.facebook.com/">Индивидуални поръчки</a></li>'."\n";
 		echo '<li><a href="https://www.facebook.com/">Посетете България</a></li>'."\n";
 		echo '<li><a href="https://www.facebook.com/">За нас</a></li>'."\n";
 		echo '<li><a href="https://www.facebook.com/">Контакти</a></li>'."\n";
 		echo '<li><a href="https://www.facebook.com/">Условия</a></li>'."\n";
 		echo '</ul>'."\n";
-	}
+  }
 }
 ?>

@@ -10,12 +10,13 @@
  * Last Modified: 	19 June 2014
  */
   
-  include 'menuMain.php';
+  include 'elements/menuMain.php';
   include 'utilities.php';
   include "structures/leftMenu.php"; // leftMenu structure
   include "structures/subMenus.php";
   include "structures/ArticleStruct.php";
   include "structures/OfferBoxStruct.php";
+  include 'structures/MainMenuStruct.php';
   include 'elements/ORHBox.php';
   include 'elements/OfferBox.php';
   include 'elements/Article.php';
@@ -91,7 +92,7 @@
   	
   	//horizontal menu
   	echo "<div id=\"hor_Menu\">\n";
-  	$menuTop = new menuMain();
+  	$this->utils->putMainMenu();
   	echo "</div>\n"; // hor_Menu 
   	
   	// the area below the horizontal menu, combining the left menu and actual page contents
@@ -148,8 +149,8 @@
   	$this->headOpenTag();
   	$this->headContents($title);
   	$this->headCloseTag();
-  	$this->bodyOpenTag();
   	$this->utils = new Utilities();
+  	$this->bodyOpenTag();
   	$this->bodyContents();
   	$this->bodyCloseTag();
   	$this->htmlCloseTag();

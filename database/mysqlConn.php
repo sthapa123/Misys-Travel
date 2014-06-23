@@ -30,6 +30,22 @@ class mysqlConn
     
   }
   
+  public function selectFromQuery($table, $s_fields)
+  {
+  	// Set locale to UTF-8 .... magic!
+  	$this->conn->query("SET NAMES UTF8");
+  	
+  	$query = ("SELECT " . $s_fields . " FROM " . $table);
+  	
+  	$rs = $this->conn->query($query);
+  	 
+  	// Check query and if its all good - return it
+  	if ($rs === false)
+  		die('Wrong SQL: ' . $query . ' Error: ' . $this->conn->error);
+  	else
+  		return $rs;
+  }
+  
   /*
    * With the following given parameters, this function makes a query
    * to database 
