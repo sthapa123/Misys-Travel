@@ -1,10 +1,23 @@
 <?php 
-class menuMain {
-  public function __construct(){
+class menuMain 
+{
+	
+  public function __construct($menus)
+  {
 		echo '<ul id= "menuMain">'."\n";
-		echo '<li><a href="http://kolygri.eu">Начало</a></li>'."\n";
-		echo '<li><a href="https://www.facebook.com/">Автобусни екскурзии</a></li>'."\n";
-		echo '<li><a href="https://www.facebook.com/">Самолетни екскурзии</a></li>'."\n";
+		
+		echo '<li><a href="http://kolygri.eu">' . 
+		     $menus[0]->getName() . 
+		     '</a></li>'."\n";
+		
+		echo '<li><a href="./pages/Offers.php?id=' . 
+		     $menus[1]->getId() . '">' . $menus[1] . 
+		     '</a></li>'."\n";
+		
+		echo '<li><a href="./pages/Offers.php?id=3">' .
+		     $menus[2] .
+		     '</a></li>'."\n";
+		
 		echo '<li><a href="https://www.facebook.com/">Holidays</a></li>'."\n";
 		echo '<li><a href="https://www.facebook.com/">Нова Година</a></li>'."\n";
 		echo '<li><a href="https://www.facebook.com/">Индивидуални поръчки</a></li>'."\n";
@@ -13,6 +26,6 @@ class menuMain {
 		echo '<li><a href="https://www.facebook.com/">Контакти</a></li>'."\n";
 		echo '<li><a href="https://www.facebook.com/">Условия</a></li>'."\n";
 		echo '</ul>'."\n";
-	}
+  }
 }
 ?>
