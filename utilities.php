@@ -8,20 +8,15 @@
  * Last Modified: 19.06.2014
  */
 
-include 'mysqlConn.php';
-include 'elements/ORHBox.php';
-include 'elements/OfferBox.php';
-include 'elements/Article.php';
-
 class Utilities
 {
 	// database connection
-	private $dbConn;
+	private $s_query;
 	
 	// constructor establishes connection
 	public function __construct()
 	{
-		$this->dbConn = new mysqlConn();
+		$this->s_query = new selectQuery();
 	}
 	
 	// This function puts the Left side menus with its submenus on a given (as argument
@@ -29,7 +24,7 @@ class Utilities
     public function putLeftSideMenus($ref_page)
     {
     	// Get names/titles of all available left side menus of that page
-    	$menus = $this->dbConn->selectLeftMenus($ref_page);
+    	$menus = $this->s_query->selectLeftMenus($ref_page);
     	
     	// count them
     	$num_menus = count($menus);
@@ -37,7 +32,7 @@ class Utilities
     	// for each of them, find all their subMenus and put them in orange head box
     	for ($i = 0; $i < $num_menus; $i++)
     	{
-       		$sub = $this->dbConn->selectSubMenus($menus[$i]->getId());
+       		$sub = $this->s_query->selectSubMenus($menus[$i]->getId());
     		new ORHBox($menus[$i]->getName(), $sub);
     	}
     	/* Important note: $menus and $sub are and must be of types 
@@ -52,23 +47,43 @@ class Utilities
     public function putOffers($subM_Id)
     {
     	// get all OfferBox structs
-    	$offers = $this->dbConn->selectOfferBoxes($subM_Id);
+    	$offers = $this->s_query->selectOfferBoxes($subM_Id);
     	
     	// count them
     	$num_offers = count($offers);
     	
     	// put each one of them in OfferBox
     	for ($i = 0; $i < $num_offers; $i++)
-    		new OfferBox($offers[$i]->getTitle(), "n/a yet", $offers[$i]->getImage(),
-    				     $offers[$i]->getPrice(), "http://kolygri.eu/pages/ArticlePage.php");
+    	{
+    		// Get all starting dates for current offer
+    		$dates = $this->s_query->selectStartingDates($offers[$i]->getId());
+    		
+    		// Get first and last and make a string for the period
+    		$period = "от " . $dates[0] . " до " . $dates[count($dates)-1];
+    		
+    		new OfferBox($offers[$i]->getTitle(),
+    				     $period,
+    				     $offers[$i]->getImage(),
+    				     $offers[$i]->getPrice(), 
+    				     "http://kolygri.eu/pages/ArticlePage.php");
+    	}
     }
     
-    public function putPublication($offerBox_Ref)
+    public function putPublication($offer_id)
     {
-    	$pub = $this->dbConn->selectArticle($offerBox_Ref);
+    	$pub = $this->s_query->selectArticle($offer_id);
     	
-    	new Article($pub->getOfferTitle(), $pub->getRoute(), $pub->getPrice(), $pub->getImage(),
-    				$pub->getGenDescription(), $pub->getDayToDayDescription());
+    	$dates = $this->s_query->selectStartingDates($pub->getId());
+    	
+    	new Article($pub->getOfferTitle(),
+    			    $pub->getRoute(),
+    			    $pub->getDuration(),
+    			    $dates,
+    			    $pub->getPrice(),
+    			    $pub->getImage(),
+    				$pub->getGenDescription(),
+    			    $pub->getDayToDayDescription(),
+    			    $pub->getPriceInfo());
     }
 }
 ?>

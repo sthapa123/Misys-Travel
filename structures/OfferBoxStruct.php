@@ -1,9 +1,15 @@
 <?php
 /* 
- * Structure for offer box data. Upon construction, needs id, image link, and submenu id to
- * which it belongs. 
+ * Structure for offer box data. Upon construction, needs id, image link, and
+ * submenu id to which it belongs. 
  * 
- * Later, when querying the ex_article table, offer title and offer price can be assigned
+ * Later, when querying the ex_article table, offer title and offer price can
+ * be assigned
+ * 
+ * Constructor arguments 
+ *   $req_id - id of the offer/article
+ *   $req_image - path to image
+ *   $req_subM - subMenu to which it belongs
  * 
  * Author: Yordan Yordanov
  * Last Modified: 20-06-2014
