@@ -11,7 +11,22 @@ class selectQuery
 	
     public function selectMainMenu()
     {
-    	
+        $rs = $this->dbConn->selectFromQuery("mainMenu", "id, name");
+
+        $menusFound = array();
+        
+        $counter = 0;
+        
+        $rs->data_seek(0);
+        
+        while ($row = $rs->fetch_assoc())
+        {
+        	$menusFound[$counter] = new MainMenuStruct($row["id"],
+        			                                   $row["name"]);
+        	$counter++;
+        }
+        
+        return $menusFound;
     }
 	
 	/*
