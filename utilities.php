@@ -59,8 +59,14 @@ class Utilities
     	
     	// put each one of them in OfferBox
     	for ($i = 0; $i < $num_offers; $i++)
-    		new OfferBox($offers[$i]->getTitle(), "n/a yet", $offers[$i]->getImage(),
+    	{
+    		$dates = $this->dbConn->selectStartingDates($offers[$i]->getId());
+    		
+    		$period = "от " . $dates[0] . " до " . $dates[count($dates)-1];
+    		
+    		new OfferBox($offers[$i]->getTitle(), $period, $offers[$i]->getImage(),
     				     $offers[$i]->getPrice(), "http://kolygri.eu/pages/ArticlePage.php");
+    	}
     }
     
     public function putPublication($offerBox_Ref)

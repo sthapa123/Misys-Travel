@@ -158,6 +158,29 @@ class mysqlConn
   	
   	return $offersFound;
   }
+  
+  /* 
+   * This function searches for all available starting dates of a offer (id given as an arg)
+   * Returns array of DateTime
+   */
+  public function selectStartingDates($offer_Id)
+  {
+  	$rs = $this->selectFromWhereQuery("ex_starting_dates", "startingDate", "ex_articleId", $offer_Id);
+  	
+  	$rs->data_seek(0);
+  	
+  	$counter = 0;
+
+  	$datesFound = array();
+  	
+  	while ($row = $rs->fetch_assoc())
+  	{
+  		$datesFound[$counter] = $row['startingDate'];
+  		$counter++;
+  	}
+
+  	return $datesFound;
+  }
    
   	
   
