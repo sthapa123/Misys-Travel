@@ -8,15 +8,15 @@
 $(window).load(function() {
   var body = document.body,
   html = document.documentElement;
-
+  /*retrieve height of tag needed to contain all the data*/
   var maxHeight = Math.max( body.scrollHeight, body.offsetHeight, 
                        html.clientHeight, html.scrollHeight, html.offsetHeight );	
-  console.log(maxHeight);
+  //console.log(maxHeight);
   var headerHeight = $("#header_image").outerHeight();
-  console.log(headerHeight);
+  //console.log(headerHeight);
   var emptyTopHeight = $("#content_part").offset().top;
-  console.log(emptyTopHeight);
-  var newHeight = maxHeight; //- headerHeight;
-  console.log(newHeight);
+  //console.log(emptyTopHeight);
+  var newHeight = maxHeight - headerHeight - emptyTopHeight;
+  // console.log(newHeight);
  $("#left_menu_and_content").css("height",newHeight+"px");
 });

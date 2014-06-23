@@ -19,4 +19,4 @@ function setNavigation() {
             $(this).closest('li').addClass('active');
         }
     });
-
+}

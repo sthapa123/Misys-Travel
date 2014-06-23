@@ -14,7 +14,9 @@ body > #content_part { height: auto; min-height: 100%; }
 	top: 40px;
 	max-width: 1150px;
 	bottom: 0px;
-	left: 20%;
+	left: 0;
+	right: 0;
+	margin: auto;
 	width: 86%;
 }
 
@@ -46,7 +48,7 @@ body > #content_part { height: auto; min-height: 100%; }
 	right: 0px;
 	bottom: 0px;
 	background: #60abfc;
-	height: 100%;
+	height: auto;
 	padding-bottom: 40px;
 }
 

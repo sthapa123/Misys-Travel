@@ -19,6 +19,15 @@ class Utilities
 		$this->s_query = new selectQuery();
 	}
 	
+	public function putMainMenu()
+	{
+		$menus = $this->s_query->selectMainMenu();
+		
+		//$num_menus = count($menus);
+		
+		new menuMain($menus);
+	}
+	
 	// This function puts the Left side menus with its submenus on a given (as argument
 	// page. To be used inside insLeftMenu() function in all pages with submenus
     public function putLeftSideMenus($ref_page)
