@@ -8,11 +8,6 @@
  * Last Modified: 19.06.2014
  */
 
-include 'database/selectQuery.php';
-include 'elements/ORHBox.php';
-include 'elements/OfferBox.php';
-include 'elements/Article.php';
-
 class Utilities
 {
 	// database connection

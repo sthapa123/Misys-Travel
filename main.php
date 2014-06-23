@@ -10,8 +10,18 @@
  * Last Modified: 	19 June 2014
  */
   
-  require 'menuMain.php';
+  include 'menuMain.php';
   include 'utilities.php';
+  include "structures/leftMenu.php"; // leftMenu structure
+  include "structures/subMenus.php";
+  include "structures/ArticleStruct.php";
+  include "structures/OfferBoxStruct.php";
+  include 'elements/ORHBox.php';
+  include 'elements/OfferBox.php';
+  include 'elements/Article.php';
+  include 'database/selectQuery.php';
+  include 'database/mysqlConn.php';
+  
   
   abstract class htmlPage 
   {
@@ -41,8 +51,8 @@
   	// include JQuery from CDN
   	echo '<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>'."\n";
   	//javascript sources
-  	echo '<script src="../JavaScript/menuMain.js"></script>'."\n"; 
-  	echo '<script src="../JavaScript/ContentHeight.js"></script>'."\n";
+  	echo '<script src="http://kolygri.eu/JavaScript/menuMain.js"></script>'."\n"; 
+  	echo '<script src="http://kolygri.eu/JavaScript/ContentHeight.js"></script>'."\n";
   	
   	// stylesheets
   	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"http://kolygri.eu/styles/basic.css\">\n"; 
