@@ -2,7 +2,7 @@
 
 class menuMain
  {
-  public function __construct()
+  public function __construct($menus)
   {
 		echo '<ul id= "menuMain">'."\n";
 		
