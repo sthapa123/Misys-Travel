@@ -11,11 +11,11 @@ class menuMain
 		     '</a></li>'."\n";
 		
 		echo '<li><a href="./pages/Offers.php?id=' . 
-		     $menus[1]->getId() . '">' . $menus[1] . 
+		     $menus[1]->getId() . '">' . $menus[1]->getName() . 
 		     '</a></li>'."\n";
 		
-		echo '<li><a href="./pages/Offers.php?id=3">' .
-		     $menus[2] .
+		echo '<li><a href="./pages/Offers.php?id=' .
+		     $menus[2]->getId() . '">' . $menus[2]->getName();
 		     '</a></li>'."\n";
 		
 		echo '<li><a href="https://www.facebook.com/">Holidays</a></li>'."\n";
