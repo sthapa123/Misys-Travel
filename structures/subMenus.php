@@ -1,11 +1,11 @@
 <?php
 /* 
  * This class represents the pain-in-the-ass submenus of given left side menu (as in 
- * 'submenus' table in database). Each submenu has a: 
+ * 'submenus' table in database). Each submenu has a:
+ *    - id - unique; used also in the childern's parent field 
  *    - label - visible name 
  *    - parent - used to determine which is (supposed to be the) the upper level menu
- *    - link - link to where it leads
- *    - id - unique; used also in the childern's parent field 
+ *    - pageRef - reference to the page where it is (mainMenu id) 
  *    all of these are aquired from the constructor as usual.
  * Levels(parent field) can be zero to determine that they're not a children to anyone and 
  * any other to suggest the relationship (see database). The database also provides a 
@@ -14,21 +14,21 @@
  * and its not needed here (well, for now, at least.....)
  * 
  *  Author: Yordan Yordanov
- *  Last Modified: 19.06.2014
+ *  Last Modified: 1.07.2014
  */
 class subMenus
 { 
 	private $label;
 	private $parent;
-	private $link;
+	private $pageRef;
 	private $id;
 	
-	public function __construct($req_id, $req_label, $req_parent, $req_link)
+	public function __construct($req_id, $req_label, $req_parent, $req_ref)
 	{
 		$this->id = $req_id;
 		$this->label = $req_label;
 		$this->parent = $req_parent;
-		$this->ref = $req_link;
+		$this->pageRef = $req_ref;
 	}
 	
 	public function getId()
@@ -46,9 +46,9 @@ class subMenus
 		return $this->parent;
 	}
 	
-	public function getLink()
+	public function getRef()
 	{
-		return $this->link;
+		return $this->pageRef;
 	}
   	
 }
