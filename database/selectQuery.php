@@ -41,7 +41,7 @@ class selectQuery
 		 * Query
 		 * SELECT id, subMenu FROM menus WHERE pageRef=$pageRef
 		 */
-		$rs = $this->dbConn->selectFromWhereQuery("menus", "id,subMenu,link",
+		$rs = $this->dbConn->selectFromWhereQuery("menus", "id,subMenu",
 				                                  "pageRef", $pageRef);
 		 
 		// array for the left side menus found
@@ -53,12 +53,11 @@ class selectQuery
 		$counter = 0;
 		 
 		// fetch every row, one by one, using column names as
-		// reference and put it in the array
+		// reference and put it in th20e array
 		while($row = $rs->fetch_assoc())
 		{
 			$menusFound[$counter] = new leftMenu($row['id'],
-		                                	     $row['subMenu'],
-					                             $row['link']);
+		                                	     $row['subMenu']);
 			$counter++;
 		}
 		 
@@ -79,8 +78,17 @@ class selectQuery
 	     * SELECT id, label, parent, link FROM subMenus
 		 * WHERE pageRefId=$pageRefId
 		 */
-		$rs = $this->dbConn->selectFromWhereQuery("subMenus", "id,label,parent,link",
+		$rs = $this->dbConn->selectFromWhereQuery("subMenus", "id,label,parent",
 												  "pageRefId", $pageRefId);
+		
+		/*
+		 * Query to select the page reference
+		 * SELECT pageRef FROM menus WHERE id = $pageRefId
+		 */
+		$rs_ref = $this->dbConn->selectFromWhereQuery("menus", "pageRef",
+				                                      "id", $pageRefId);
+		$menuId = $rs_ref->fetch_assoc(); 
+		
 		// Array for the submenus found
 		$menusFound = array();
 	
@@ -95,7 +103,7 @@ class selectQuery
 			$menusFound[$counter] = new subMenus($row['id'],
 					                             $row['label'],
 					                             $row['parent'],
-					                             $row['link']);
+					                             $menuId['pageRef']);
 			$counter++;
 		}
 		 
