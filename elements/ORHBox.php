@@ -60,6 +60,7 @@ class ORHBox
 	        // get id and parents menu, so would be able to know which menu to hide
 	        /* Yordan: set menuId and subMenu to calculate which article to show */
 	        for ($i=0; $i < $num_items; $i++){
+
 	   	       echo "<li class=" . $this->options[$i]->getId(). "." 
 	   	            . $this->options[$i]->getParent() . ">" 
 	   	       		. '<a href=?menuId=' . $this->options[$i]->getRef()  
