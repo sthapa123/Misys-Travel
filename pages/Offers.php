@@ -12,7 +12,7 @@ class Offers extends htmlPage
 	
 	public function insContent()
 	{
-		echo "offers go here";
+		$this->utils->putOffers($_GET['subMenu']);
 	}
 }
 

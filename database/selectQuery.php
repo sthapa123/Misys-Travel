@@ -159,7 +159,7 @@ class selectQuery
 		     $rs2 = $this->dbConn->selectFromWhereQuery("ex_articles",
 	 		                                            "offer_title,price",
 			                                            "id",
-			 $offersFound[$i]->getId());
+			                                            $offersFound[$i]->getId());
 			 // search at first position
 			 $rs2->data_seek(0);
 	
@@ -169,6 +169,32 @@ class selectQuery
 		}
 		 
 		return $offersFound;
+	}
+	
+	/*
+	 * This function seeks the children of a parent sub menus and 
+	 * returns their ids as an array;
+	 */
+	public function selectMenuChildren($parent_Id)
+	{
+		$rs = $this->dbConn->selectFromWhereQuery("subMenus",
+				                                  "id", 
+				                                  "parent",
+				                                  $parent_Id);
+		
+		$rs->data_seek(0);
+		
+		$ids = array();
+		
+		$counter = 0;
+		
+		while ($row = $rs->fetch_assoc())
+		{
+			$ids[$counter] = $row['id'];
+			$counter++;
+		}
+		
+		return $ids;
 	}
 	
 	/*
