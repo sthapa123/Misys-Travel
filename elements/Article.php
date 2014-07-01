@@ -40,12 +40,12 @@
 			  /*items next to image*/
 			  echo '<div id="shortOffer">'."\n";			 
 				  echo '<div id="duration">'."\n";
-				  echo '<b>' . $duration . '</b>'."\n";
+				  echo $duration."\n";
 				  echo '</div>'."\n";
 				  
 				  /*dates when new trips to this destination start*/
 				  echo '<div id="startingDates">'."\n";
-				  echo '<b>Дати</b><br>'."\n";
+				  echo 'Дати<br>'."\n";
 				  echo count($dates);
 				  for ($i = 0; $i < count($dates); $i++)
 				  	echo $dates[$i] . "<br>";
@@ -58,7 +58,7 @@
 				  
 				  /*leads to request form about the particular excursion*/
 				  echo '<div id="requestButton">'."\n";
-				  echo '<button type="button">Резервация/Запитване</button>'."\n";
+				  echo '<a href="URL HERE">Резервация/Запитване</a>'."\n";
 				  echo '</div>'."\n";	  
 				/*closin tag for shortOffer*/  
 			  echo '</div>'."\n";

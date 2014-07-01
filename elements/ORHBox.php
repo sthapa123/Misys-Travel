@@ -59,7 +59,7 @@ class ORHBox
 	        // javascript for hiding/showing, etc
 	        // get id and parents menu, so would be able to know which menu to hide
 	        for ($i=0; $i < $num_items; $i++){
-	   	       echo "<li class=".$this->options[$i]->getId().".".$this->options[$i]->getParent().">" 
+	   	       echo "<li id=".$this->options[$i]->getId().".".$this->options[$i]->getParent().">" 
 	   	       		. $this->options[$i]->getLabel() . " " 
 	              . $this->options[$i]->getParent() . "</li>\n";
 	        }

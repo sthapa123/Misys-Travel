@@ -6,7 +6,7 @@ class ArticlePage extends htmlPage
 		
   public function insLeftMenu() 
   {
-    $this->utils->putLeftSideMenus("BusExcursions");
+   //$this->utils->putLeftSideMenus("BusExcursions");
   }
 	  
   /*insert new article in the page*/
