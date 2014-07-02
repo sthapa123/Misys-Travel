@@ -55,7 +55,6 @@
   	echo '<script src="http://kolygri.eu/JavaScript/menuMain.js"></script>'."\n"; 
   	echo '<script src="http://kolygri.eu/JavaScript/ContentHeight.js"></script>'."\n";
   	echo '<script src="http://kolygri.eu/JavaScript/ExpandLeftMenus.js"></script>'."\n";
-  	echo '<script src="http://kolygri.eu/JavaScript/leftsidemenu.js"></script>'."\n";
   	
   	// stylesheets
   	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"http://kolygri.eu/styles/basic.css\">\n"; 
@@ -63,6 +62,7 @@
   	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"http://kolygri.eu/styles/orhboxes.css\">\n";
   	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"http://kolygri.eu/styles/offerboxes.css\">\n";
   	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"http://kolygri.eu/styles/Article.css\">\n";
+  	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"http://kolygri.eu/styles/ReservationRequestForm.css\">\n";
   }
   
   // Closes the <head> tag

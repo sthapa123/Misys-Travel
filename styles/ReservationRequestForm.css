@@ -1,0 +1,15 @@
+@CHARSET "ISO-8859-1";
+input{
+	display: block;
+	margin-top: 10em;
+}
+
+.radio_buttons{
+	-moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px; /* border radius */
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box; /* prevents bg color from leaking outside the border */
+  background-color: #8dc3fb; /* layer fill content */	
+}
