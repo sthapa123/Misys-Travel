@@ -25,12 +25,33 @@
 ul.submenus
 {
 	list-style-type: none; 
+	margin: 10px;
+    padding-left: 20px;
 }
 
-.submenus > a:link, a:visited 
+.orh_tit 
+{
+	font-size: 1.2em; 
+	color: #311e32;
+	margin-left: 20px;
+	padding-top: 3px;
+    padding-bottom: 3px; 	
+}
+
+.msub 
+{
+	display: none;
+}
+
+.mlink
 {
     text-decoration: none;
     color: #311e32;
+}
+
+.mlink:hover 
+{
+	color: #60abfc;
 }
 
 .options 

@@ -31,8 +31,9 @@ class ORHBox
 	{
 		echo "<div class=\"ORHBWrapper\">\n";
 		echo "<div class=\"orangeBox\">\n";
-		echo "<div class=orangeHead>" . $title. "</div>\n"; // orangeHead
-		
+		echo "<div class=orangeHead>" .
+		     "<div class=\"orh_tit\">" . $title. "</div>" . 
+		     "</div>\n"; // orangeHead
 		echo "<div class=\"options\">\n";
 		$this->options = $req_options;
 		$this->printOptions();
@@ -87,8 +88,9 @@ class ORHBox
                	 $prev_parent = $par;
                }
                
-	   	       echo "<li class=\"level" . $current_level . 
-	   	            " id-" . $this->options[$i]->getId() . 
+               $prev_level = $current_level - 1;
+               
+	   	       echo "<li class=\"level" . $current_level .  
 	   	            " par-" . $par . "\">" 
 	   	            
 	   	       		. '<a class="mlink" href=?menuId=' . $this->options[$i]->getRef()  
@@ -96,10 +98,18 @@ class ORHBox
 	   	       		 
 	   	       		' onclick="javascript:showMenu(' .
 	   	       		$current_level . ", " .
-	   	       		$this->options[$i]->getId() . ', true);">'
+	   	       		$this->options[$i]->getId() . ', true);"' .
 	   	       		
+	   	       		' onmouseout="javascript:showMenu(' .
+	   	       		$prev_level .  ", " .
+	   	       		$par . ', true);"' .
+	   	       		
+	   	       		' onmouseover="javascript:showMenu(' .
+	   	       		$prev_level .  ", " .
+	   	       		$par . ', true);">'
+	   	       			   	       		
 	   	       		.  $this->options[$i]->getLabel() . "</a> " 
-	              . $this->options[$i]->getParent() . "</li>\n";
+	                . "</li>\n";
 	        }
 	        echo "</ul>";
 	    }
