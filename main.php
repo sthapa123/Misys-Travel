@@ -62,6 +62,7 @@
   	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"http://kolygri.eu/styles/orhboxes.css\">\n";
   	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"http://kolygri.eu/styles/offerboxes.css\">\n";
   	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"http://kolygri.eu/styles/Article.css\">\n";
+  	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"http://kolygri.eu/styles/ReservationRequestForm.css\">\n";
   }
   
   // Closes the <head> tag

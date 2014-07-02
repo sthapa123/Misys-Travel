@@ -40,12 +40,12 @@
 			  /*items next to image*/
 			  echo '<div id="shortOffer">'."\n";			 
 				  echo '<div id="duration">'."\n";
-				  echo $duration."\n";
+				  echo 'Продължителност: '.$duration."\n";
 				  echo '</div>'."\n";
 				  
 				  /*dates when new trips to this destination start*/
 				  echo '<div id="startingDates">'."\n";
-				  echo 'Дати<br>'."\n";
+				  echo 'Дати:<br>'."\n";
 				  echo count($dates);
 				  for ($i = 0; $i < count($dates); $i++)
 				  	echo $dates[$i] . "<br>";
@@ -53,12 +53,12 @@
 				  echo '</div>'."\n";
 				  
 				  echo '<div id="price">'."\n";
-				  echo $price . "\n";
+				  echo 'Цена: '.$price . "\n";
 				  echo '</div>'."\n";
 				  
 				  /*leads to request form about the particular excursion*/
 				  echo '<div id="requestButton">'."\n";
-				  echo '<a href="URL HERE">Резервация/Запитване</a>'."\n";
+				  echo '<a href="../pages/ReservationRequestForm.php">Резервация/Запитване</a>'."\n";
 				  echo '</div>'."\n";	  
 				/*closin tag for shortOffer*/  
 			  echo '</div>'."\n";
