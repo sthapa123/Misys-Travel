@@ -59,12 +59,45 @@ class ORHBox
 	        // javascript for hiding/showing, etc
 	        // get id and parents menu, so would be able to know which menu to hide
 	        /* Yordan: set menuId and subMenu to calculate which article to show */
-	        for ($i=0; $i < $num_items; $i++){
-
-	   	       echo "<li class=" . $this->options[$i]->getId(). "." 
-	   	            . $this->options[$i]->getParent() . ">" 
-	   	       		. '<a href=?menuId=' . $this->options[$i]->getRef()  
-	   	       		. "&subMenu=" . $this->options[$i]->getId() . '>'
+	        
+	        $current_level = 0; 
+	        $prev_parent = 0; 
+	        
+	        for ($i=0; $i < $num_items; $i++)
+	        {
+	           $par = $this->options[$i]->getParent();
+	           
+               if ($par == 0)
+               {
+               	 $current_level = 0; 
+               	 $prev_parent = 0;
+               }
+               elseif ($par > $prev_parent)
+               {
+               	 $current_level++;
+               	 $prev_parent = $par;
+               }
+               elseif ($par == $prev_parent)
+               {
+               	 $prev_parent = $par;
+               }
+               else 
+               {
+               	 $current_level--;
+               	 $prev_parent = $par;
+               }
+               
+	   	       echo "<li class=\"level" . $current_level . 
+	   	            " id-" . $this->options[$i]->getId() . 
+	   	            " par-" . $par . "\">" 
+	   	            
+	   	       		. '<a class="mlink" href=?menuId=' . $this->options[$i]->getRef()  
+	   	       		. "&subMenu=" . $this->options[$i]->getId() .
+	   	       		 
+	   	       		' onclick="javascript:showMenu(' .
+	   	       		$current_level . ", " .
+	   	       		$this->options[$i]->getId() . ', true);">'
+	   	       		
 	   	       		.  $this->options[$i]->getLabel() . "</a> " 
 	              . $this->options[$i]->getParent() . "</li>\n";
 	        }
