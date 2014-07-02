@@ -19,9 +19,32 @@
 	width: 100%;
 	background: #f57643;
 	border-radius: 15px;
+	
+}
+
+ul.submenus
+{
+	list-style-type: none; 
+}
+
+.submenus > a:link, a:visited 
+{
+    text-decoration: none;
+    color: #311e32;
 }
 
 .options 
 { 
 	padding: 3px;	
+}
+
+.level1 {
+	margin-left: 10px;
+	display: none;
+}
+
+.level2
+{
+	margin-left: 20px;
+	display: none;
 }
