@@ -61,11 +61,15 @@ ul.submenus
 
 .level1 {
 	margin-left: 10px;
-	display: none;
+	/* display: none; */
 }
 
 .level2
 {
 	margin-left: 20px;
+	/* display: none; */
+}
+
+.par-2 {
 	display: none;
 }

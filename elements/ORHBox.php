@@ -91,14 +91,15 @@ class ORHBox
                $prev_level = $current_level - 1;
                
 	   	       echo "<li class=\"level" . $current_level .  
-	   	            " par-" . $par . "\">" 
+	   	            " par-" . $par . "\">"   
 	   	            
-	   	       		. '<a class="mlink" href=?menuId=' . $this->options[$i]->getRef()  
-	   	       		. "&subMenu=" . $this->options[$i]->getId() .
-	   	       		 
-	   	       		' onclick="javascript:showMenu(' .
-	   	       		$current_level . ", " .
-	   	       		$this->options[$i]->getId() . ', true);"' .
+	   	       		. '<a class="mlink"' .
+	 	   	       	  "id=\"mid-" . $this->options[$i]->getId() ."\" " .
+	   	       		  'href=?menuId=' . $this->options[$i]->getRef()  
+	   	       		. "&subMenu=" . $this->options[$i]->getId() . ">"
+	   	       		 /*
+	   	       		' onclick="javascript:goMenu(' .
+	   	       		$this->options[$i]->getId() . ");\">" /*.
 	   	       		
 	   	       		' onmouseout="javascript:showMenu(' .
 	   	       		$prev_level .  ", " .
@@ -106,7 +107,7 @@ class ORHBox
 	   	       		
 	   	       		' onmouseover="javascript:showMenu(' .
 	   	       		$prev_level .  ", " .
-	   	       		$par . ', true);">'
+	   	       		$par . ', true);">'*/
 	   	       			   	       		
 	   	       		.  $this->options[$i]->getLabel() . "</a> " 
 	                . "</li>\n";
