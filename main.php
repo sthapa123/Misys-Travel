@@ -56,6 +56,7 @@
   	echo '<script src="http://kolygri.eu/JavaScript/ContentHeight.js"></script>'."\n";
   	echo '<script src="http://kolygri.eu/JavaScript/ExpandLeftMenus.js"></script>'."\n";
   	echo '<script src="http://kolygri.eu/JavaScript/leftsidemenu.js"></script>'."\n";
+  	echo '<script src="http://kolygri.eu/JavaScript/FormSubmit.js"></script>'."\n";
   	// stylesheets
   	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"http://kolygri.eu/styles/basic.css\">\n"; 
   	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"http://kolygri.eu/styles/menuMain.css\">\n";
@@ -97,7 +98,8 @@
   	echo "</div>\n"; // hor_Menu 
   	
   	// the area below the horizontal menu, combining the left menu and actual page contents
-  	echo "<div id=\"left_menu_and_content\">\n";
+  	//applying clear fix class, so that article height doesn't exceed content height
+  	echo "<div id=\"left_menu_and_content\" class=\"clearfix\">\n";
   	
   	// the left menu; calling function to get its content
   	echo "<div id=\"left_menu\">\n";

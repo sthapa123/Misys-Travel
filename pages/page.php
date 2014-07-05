@@ -21,7 +21,12 @@
    			die();
    			break;
    		}
-   		
+   	case 6: 
+   		{
+   			header("Location: ./ReservationRequestForm.php");
+   			die();
+   			break;
+   		}
    		
    }
    
