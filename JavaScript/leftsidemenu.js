@@ -14,15 +14,10 @@ $(document).ready(function() {
 	
 	$('.par-' + subM).show(); 
 	
-	/*
-	$("#mid-2").on("click", function(event){
-		window.location.assign("http://kolygri.eu/pages/Offers.php?menuId=2&subMenu=2");
-		$(document).ready(function() {
-		$(".par-2").toggle();
-		});
-	 	return false;
-	});
-	*/
+	$('#mid-' + subM).show();
+	$('#mid-' + subM).css("font-weight", "bold");
+	$('#mid-' + subM).siblings().show();
+	
 });
 
 function hideLevels()

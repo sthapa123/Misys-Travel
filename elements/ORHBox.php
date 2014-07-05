@@ -62,11 +62,20 @@ class ORHBox
 	        /* Yordan: set menuId and subMenu to calculate which article to show */
 	        
 	        $current_level = 0; 
-	        $prev_parent = 0; 
+	        $prev_level = 0;
+	        
 	        
 	        for ($i=0; $i < $num_items; $i++)
-	        {
+	        { 
+	           
 	           $par = $this->options[$i]->getParent();
+	           
+	           $next_parent;
+	           $k = $i + 1;
+	           if ($k < $num_items)
+	             $next_parent = $this->options[$k]->getParent();
+	           else 
+	           	 $next_parent = -1;
 	           
                if ($par == 0)
                {
@@ -77,40 +86,33 @@ class ORHBox
                {
                	 $current_level++;
                	 $prev_parent = $par;
+               	 echo "<div class=\"subdiv\">";
                }
-               elseif ($par == $prev_parent)
-               {
-               	 $prev_parent = $par;
-               }
-               else 
+               elseif ($par < $prev_parent) 
                {
                	 $current_level--;
                	 $prev_parent = $par;
                }
                
-               $prev_level = $current_level - 1;
                
 	   	       echo "<li class=\"level" . $current_level .  
-	   	            " par-" . $par . "\">"   
+	   	            " par-" . $par . "\"" .
+	   	            " id=\"mid-" . $this->options[$i]->getId() ."\">"; 
+
+               if ($next_parent > $par)
+               	    echo "<span class=\"opener\"> + </span>"; 
 	   	            
-	   	       		. '<a class="mlink"' .
-	 	   	       	  "id=\"mid-" . $this->options[$i]->getId() ."\" " .
-	   	       		  'href=?menuId=' . $this->options[$i]->getRef()  
+	   	       echo  '<a class="mlink"' .
+	   	       		  ' href=?menuId=' . $this->options[$i]->getRef()  
 	   	       		. "&subMenu=" . $this->options[$i]->getId() . ">"
-	   	       		 /*
-	   	       		' onclick="javascript:goMenu(' .
-	   	       		$this->options[$i]->getId() . ");\">" /*.
-	   	       		
-	   	       		' onmouseout="javascript:showMenu(' .
-	   	       		$prev_level .  ", " .
-	   	       		$par . ', true);"' .
-	   	       		
-	   	       		' onmouseover="javascript:showMenu(' .
-	   	       		$prev_level .  ", " .
-	   	       		$par . ', true);">'*/
-	   	       			   	       		
-	   	       		.  $this->options[$i]->getLabel() . "</a> " 
+	   	       		 	   	       		
+	   	       		.  $this->options[$i]->getLabel() . "</a> "
 	                . "</li>\n";
+	   	       
+	   	       
+	   	       
+	   	       if (($par > $next_parent) || ($next_parent == -1))
+	   	       	 echo "</div>";
 	        }
 	        echo "</ul>";
 	    }
